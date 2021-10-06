@@ -81,6 +81,7 @@ object Ktor {
     const val clientMock = "$groupId:ktor-client-mock:$version"
     const val clientMockJvm = "$groupId:ktor-client-mock-jvm:$version"
     const val serverTestHost = "$groupId:ktor-server-test-host:$version"
+    const val serialization = "$groupId:ktor-serialization:$version"
 }
 
 object Logback {

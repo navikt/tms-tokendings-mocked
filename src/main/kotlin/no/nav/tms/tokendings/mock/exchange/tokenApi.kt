@@ -18,7 +18,7 @@ fun Route.tokenApi() {
         val token = call.receiveToken()
 
         if (token != null) {
-            call.respondText(token, contentType = Application.Json)
+            call.respond(TokenResponse(token))
         } else {
             call.respondText("", status = HttpStatusCode.BadRequest)
         }
