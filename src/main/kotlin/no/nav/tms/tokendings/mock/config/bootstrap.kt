@@ -18,6 +18,6 @@ fun Application.mainModule(appContext: ApplicationContext = ApplicationContext()
 
     routing {
         healthApi()
-        tokenApi()
+        tokenApi(appContext.builder)
     }
 }

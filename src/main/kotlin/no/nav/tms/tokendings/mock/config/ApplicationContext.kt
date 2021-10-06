@@ -1,10 +1,10 @@
 package no.nav.tms.tokendings.mock.config
 
-import org.slf4j.LoggerFactory
+import no.nav.tms.tokendings.mock.exchange.TokendingsMetadataBuilder
 
 class ApplicationContext {
 
-    private val log = LoggerFactory.getLogger(ApplicationContext::class.java)
-
     val environment = Environment()
+
+    val builder = TokendingsMetadataBuilder(environment.localUrl)
 }

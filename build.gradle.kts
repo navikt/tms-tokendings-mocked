@@ -51,6 +51,7 @@ tasks {
 
         mainClass.set(application.mainClass)
         classpath = sourceSets["main"].runtimeClasspath
+        environment("LOCAL_URL", "http://localhost:9051")
     }
 }
 

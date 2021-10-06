@@ -7,9 +7,9 @@ import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
 
-fun Route.tokenApi() {
+fun Route.tokenApi(tokendingsMetadataBuilder: TokendingsMetadataBuilder) {
     get("/.well-known/oauth-authorization-server") {
-        val metadata = TokendingsMetadataBuilder.createMetadata(call)
+        val metadata = tokendingsMetadataBuilder.createMetadata()
 
         call.respond(metadata)
     }

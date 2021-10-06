@@ -1,16 +1,12 @@
 package no.nav.tms.tokendings.mock.exchange
 
-import io.ktor.application.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-object TokendingsMetadataBuilder {
-    fun createMetadata(call: ApplicationCall): TokendingsConfigurationMetadata {
-        val scheme = call.request.local.scheme
-        val host = call.request.local.host
-        val port = call.request.local.port
+class TokendingsMetadataBuilder(private val localUrl: String) {
+    fun createMetadata(): TokendingsConfigurationMetadata {
 
-        val url = "$scheme://$host:$port/token"
+        val url = "$localUrl/token"
 
         return TokendingsConfigurationMetadata(url)
     }

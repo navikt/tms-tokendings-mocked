@@ -1,6 +1,8 @@
 package no.nav.tms.tokendings.mock.config
 
-class Environment
+class Environment(
+        val localUrl: String = getEnvVar("LOCAL_URL")
+)
 
 fun getEnvVar(varName: String): String {
     return System.getenv(varName)
